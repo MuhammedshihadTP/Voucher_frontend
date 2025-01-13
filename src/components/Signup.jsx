@@ -24,7 +24,9 @@ const Signup = () => {
       try {
         const response = await signup(values); 
         toast.success(response.message);
+
         resetForm();
+        navigate("/login")
       } catch (error) {
         toast.error(error.response?.data?.message || 'Error signing up'); 
       }
